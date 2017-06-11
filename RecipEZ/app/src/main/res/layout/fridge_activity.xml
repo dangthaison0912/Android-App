@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1"
+    tools:context=".FridgeActivity">
+
+
+    <EditText
+        android:id="@+id/food_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Insert Food"
+        android:inputType="textPersonName"
+        android:textSize="24sp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="69dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"/>
+
+    <TextView
+        android:id="@+id/show_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/food_name_input"
+        android:textSize="24sp"
+        android:layout_toLeftOf="@+id/date_picker"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="15dp"
+        android:text="Cooked Date"/>
+
+    <Button
+        android:id="@+id/date_picker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:layout_alignBaseline="@+id/show_date"
+        android:layout_alignBottom="@+id/show_date"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp" />
+
+    <Button
+        android:id="@+id/fridge_submit_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_below="@+id/date_picker"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"/>
+</RelativeLayout>

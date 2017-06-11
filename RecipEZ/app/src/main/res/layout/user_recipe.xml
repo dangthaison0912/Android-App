@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/textViewRN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:text="Recipe Name"
+            android:textSize="25sp"
+            android:layout_below="@+id/textViewURTitle"
+            android:layout_alignLeft="@+id/textViewURTitle"
+            android:layout_alignStart="@+id/textViewURTitle" />
+
+        <TextView
+            android:id="@+id/textViewURTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="12dp"
+            android:text="Add a New Recipe"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editTextRN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textViewRN"
+            android:layout_below="@+id/textViewRN"
+            android:ems="10"
+            android:hint="Add a New Recipe Name"
+            android:inputType="textPersonName"
+            android:layout_alignLeft="@+id/textViewRN" />
+
+        <TextView
+            android:id="@+id/textViewIng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/editTextRN"
+            android:layout_alignStart="@+id/editTextRN"
+            android:layout_below="@+id/editTextRN"
+            android:layout_marginTop="35dp"
+            android:text="Ingredients"
+            android:textSize="25sp" />
+
+        <EditText
+            android:id="@+id/editTextIng"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textViewIng"
+            android:layout_below="@+id/textViewIng"
+            android:ems="10"
+            android:hint="Add in Ingredients Here"
+            android:inputType="textPersonName"
+            android:layout_alignLeft="@+id/textViewIng" />
+
+        <EditText
+            android:id="@+id/editTextAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/editTextIng"
+            android:layout_alignEnd="@+id/editTextSteps"
+            android:layout_alignRight="@+id/editTextSteps"
+            android:layout_alignTop="@+id/editTextIng"
+            android:layout_toRightOf="@+id/editTextIng"
+            android:ems="10"
+            android:hint="Amount"
+            android:inputType="textPersonName"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textViewSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Steps"
+            android:textSize="25sp"
+            android:layout_below="@+id/editTextIng"
+            android:layout_alignLeft="@+id/editTextIng"
+            android:layout_alignStart="@+id/editTextIng" />
+
+        <EditText
+            android:id="@+id/editTextSteps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Add in steps for the dish"
+            android:inputType="textMultiLine"
+            android:layout_below="@+id/textViewSteps"
+            android:layout_alignLeft="@+id/textViewSteps"
+            android:layout_alignStart="@+id/textViewSteps"
+            android:layout_alignRight="@+id/buttonShare"
+            android:layout_alignEnd="@+id/buttonShare" />
+
+        <Button
+            android:id="@+id/buttonShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share this Recipe"
+            android:layout_marginBottom="15dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="17dp"
+            android:layout_marginEnd="17dp" />
+    </RelativeLayout>
+
+</ScrollView>

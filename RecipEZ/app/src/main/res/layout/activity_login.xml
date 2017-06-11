@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/login_layout"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="30dp"
+        android:text="Login" />
+
+    <EditText
+        android:id="@+id/login_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="10dp"
+        android:text=" "
+        android:color="@color/alert"
+        android:textColor="@color/alert"
+        android:id="@+id/textViewLoginIdMessage"
+        android:layout_below="@+id/editTextRegUserId"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/login_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textSize="10dp"
+        android:text=" "
+        android:color="@color/alert"
+        android:textColor="@color/alert"
+        android:id="@+id/textViewLoginPasswordMessage"
+        android:layout_below="@+id/editTextRegUserId"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/login_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Login" />
+
+</LinearLayout>

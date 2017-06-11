@@ -1,0 +1,53 @@
+
+
+image: openjdk:8-jdk
+
+variables:
+  ANDROID_COMPILE_SDK: "25"
+  ANDROID_BUILD_TOOLS: "25.0.3"
+  ANDROID_SDK_TOOLS: "24.4.1"
+
+before_script:
+  - apt-get --quiet update --yes
+  - apt-get --quiet install --yes wget tar unzip lib32stdc++6 lib32z1
+  - wget --quiet --output-document=android-sdk.tgz https://dl.google.com/android/android-sdk_r${ANDROID_SDK_TOOLS}-linux.tgz
+  - tar --extract --gzip --file=android-sdk.tgz
+
+  - export ANDROID_HOME=$PWD/android-sdk-linux
+  - echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter android-${ANDROID_COMPILE_SDK}
+  - echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter platform-tools
+  - echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter build-tools-${ANDROID_BUILD_TOOLS}
+  - echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter extra-android-m2repository
+  - echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter extra-google-google_play_services
+  - echo y | $ANDROID_HOME/tools/android --silent update sdk --no-ui --all --filter extra-google-m2repository
+
+  - echo y | $ANDROID_HOME/tools/android update sdk --no-ui --all --filter "tool,extra-android-m2repository,extra-android-support,extra-google-google_play_services,extra-google-m2repository"
+  - echo y | $ANDROID_HOME/tools/bin/sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
+
+  - export PATH=$PATH:$PWD/android-sdk-linux/platform-tools/
+  - cd RecipEZ
+  - chmod +x ./gradlew
+
+stages:
+  - build
+  - test
+  - deploy
+ 
+build:
+  stage: build
+  script:
+    - ./gradlew assembleDebug
+
+unitTests:
+  stage: test
+  script:
+    - ./gradlew test
+
+deploy:
+  stage: deploy
+  only: 
+    - master
+  script:
+    - ./gradlew assemble
+    - chmod +x ../deploy_apk.sh
+    - ../deploy_apk.sh

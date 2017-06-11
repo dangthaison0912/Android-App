@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="true"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <TextView
+            android:id="@+id/recipe_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="12dp"
+            android:text="Recipe Name"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/ingredient_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingredients"
+            android:textSize="25sp"
+            android:layout_above="@+id/amount"
+            android:layout_alignLeft="@+id/recipe_name"
+            android:layout_alignStart="@+id/recipe_name" />
+
+        <TextView
+            android:id="@+id/ingredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Ingredients"
+            android:textSize="18sp"
+            android:layout_above="@+id/steps_label"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="39dp" />
+
+        <TextView
+            android:id="@+id/amount"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Amount"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="18sp"
+            android:layout_alignBaseline="@+id/ingredient"
+            android:layout_alignBottom="@+id/ingredient"
+            android:layout_toLeftOf="@+id/ingredient"
+            android:layout_alignLeft="@+id/ingredient_label"
+            android:layout_alignStart="@+id/ingredient_label" />
+
+        <TextView
+            android:id="@+id/steps_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textSize="25sp"
+            android:layout_above="@+id/steps"
+            android:layout_alignLeft="@+id/steps"
+            android:layout_alignStart="@+id/steps" />
+
+        <TextView
+            android:id="@+id/steps"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:text="Add in steps for the dish"
+            android:inputType="textMultiLine"
+            android:textSize="18sp"
+            android:layout_marginBottom="170dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/amount"
+            android:layout_alignStart="@+id/amount"
+            android:layout_alignRight="@+id/ingredient"
+            android:layout_alignEnd="@+id/ingredient" />
+
+        <ImageView
+            android:id="@+id/recipe_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/ingredient_label"
+            android:layout_alignEnd="@+id/recipe_name"
+            android:layout_alignLeft="@+id/recipe_name"
+            android:layout_alignRight="@+id/recipe_name"
+            android:layout_alignStart="@+id/recipe_name"
+            android:layout_below="@+id/recipe_name"
+            app:srcCompat="@drawable/common_google_signin_btn_icon_dark_normal_background" />
+
+    </RelativeLayout>
+
+</ScrollView>
